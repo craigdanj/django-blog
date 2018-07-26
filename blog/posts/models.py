@@ -4,15 +4,15 @@ from django.db import models
 
 class Category(models.Model):
 	name = models.CharField(max_length=80)
-	short_description = models.CharField(max_length=100)
+	description = models.CharField(max_length=100)
 
 	def __str__(self):
 		return self.name
 
 class Post(models.Model):
-	post_title = models.CharField(max_length=200)
-	post_description = models.CharField(max_length=5000)
-	pub_date = models.DateTimeField('date published')
+	#description = models.CharField(max_length=5000)
+	#pub_date = models.DateTimeField('date published')
+	title = models.CharField(max_length=200)
 	category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
 	def __str__(self):
