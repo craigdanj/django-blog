@@ -1,5 +1,5 @@
 # django-blog
-A demo blog built with Django.
+A simple minimalistic blog built with Django.
 
 
 - [ ] Conditionally render the read more link
