@@ -13,3 +13,4 @@ A simple minimalistic blog built with [Django](https://www.djangoproject.com/).
 - [ ] Add “post list for tag” view
 - [ ] Add a website name field
 - [ ] Add rich-text editor for post description.
+- [ ] Document versions of python, django and dependent libraries in readme.
