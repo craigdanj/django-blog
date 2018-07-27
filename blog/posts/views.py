@@ -2,7 +2,9 @@ from django.shortcuts import render
 from .models import Post, Tag, Category
 import math
 
-def posts(request, page):
+# fetch home posts list
+def home(request):
+	page = 1
 	count_per_page = 5
 	offset = count_per_page * (page - 1)
 	limit = offset+count_per_page
@@ -33,7 +35,40 @@ def posts(request, page):
 
 	return render(request, 'posts/posts.html', context)
 
+# fetch all posts list
+def posts(request, page):
 
+	count_per_page = 5
+	offset = count_per_page * (page - 1)
+	limit = offset+count_per_page
+
+	posts = Post.objects.all()[offset: limit]
+	post_count = Post.objects.count()
+
+	pagination_items = []
+
+	if post_count <= count_per_page:
+		pagination_item_count = 1
+	else:
+		pagination_item_count = math.ceil(post_count/count_per_page)
+
+	for page in range(1, pagination_item_count+1):
+		pagination_items.append(page)
+
+	categories = Category.objects.all()
+	tags = Tag.objects.all()
+
+	context = {
+		'post_list': posts,
+		'category_list': categories,
+		'tag_list': tags,
+		'pagination_items': pagination_items,
+		'type': None
+	}
+
+	return render(request, 'posts/posts.html', context)
+
+# fetch post list for given taxonomy item
 def taxonomy_posts(request, type, tax_id, page):
 	count_per_page = 5
 	offset = count_per_page * (page - 1)
@@ -85,7 +120,7 @@ def taxonomy_posts(request, type, tax_id, page):
 
 	return render(request, 'posts/posts.html', context)
 
-
+# fetch single post
 def post(request, post_id):
 
 	post = Post.objects.get(pk=post_id)
