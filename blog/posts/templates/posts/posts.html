@@ -3,6 +3,11 @@
 {% block content %}
 
 	<div>
+
+		{% if sub_type %}
+			<h1 class="border-bottom pb-2">{{sub_type}}</h1>
+		{% endif %}
+
 		{% for post in post_list %}
 			<div class="post-excerpt border-bottom pb-4 pt-4">
 				<p class="text-black-50">
@@ -12,8 +17,6 @@
 				<h2 class="h3">
 					<a class="post-title text-dark" href="/post/{{post.id}}">{{post.title}}</a>
 				</h2>
-
-				
 
 				<div class="post-description text-muted">
 					{{post.description|truncatechars:200}}
@@ -34,7 +37,6 @@
 					</li>
 				{% endfor %}
 			</ul>
-			
 
 		</div>
 	</div>
@@ -48,7 +50,7 @@
 	<ul class="nav flex-column">
 		{% for category in category_list %}
 			<li class="nav-item">
-				<a class="nav-link" href="">{{category.name}}</a>
+				<a class="nav-link" href="/category/{{category.pk}}/1">{{category.name}}</a>
 			</li>
 		{% endfor %}
 	</ul>
@@ -59,7 +61,7 @@
 	<ul class="nav flex-column">
 		{% for tag in tag_list %}
 			<li class="nav-item">
-				<a class="nav-link" href="">{{tag.name}}</a>
+				<a class="nav-link" href="/tag/{{tag.pk}}/1">{{tag.name}}</a>
 			</li>
 		{% endfor %}
 	</ul>

@@ -8,14 +8,16 @@ def posts(request, page):
 
 	posts = Post.objects.all()[offset: limit]
 	post_count = Post.objects.count()
-	categories = Category.objects.all()
-	tags = Tag.objects.all()
+	
 	
 	pagination_items = []
 	pagination_item_count = post_count%count_per_page
 
 	for page in range(1, pagination_item_count+1):
 		pagination_items.append(page)
+
+	categories = Category.objects.all()
+	tags = Tag.objects.all()
 
 	context = {
 		'post_list': posts,
@@ -25,6 +27,50 @@ def posts(request, page):
 	}
 
 	return render(request, 'posts/posts.html', context)
+
+def taxonomy_posts(request, type, tax_id, page):
+
+	if type == 'tag':
+		pass
+		current_tag = Tag.objects.get(pk=tax_id)
+		sub_type = current_tag.name
+		print(current_tag)
+	elif type == 'category':
+		pass
+		current_cat = Category.objects.get(pk=tax_id)
+		sub_type = current_cat.name
+
+	else:
+		return
+
+	count_per_page = 5
+	offset = count_per_page * (page - 1)
+	limit = offset+count_per_page
+
+	posts = Post.objects.filter()[offset: limit]
+	post_count = Post.objects.count()
+	
+	pagination_items = []
+	pagination_item_count = post_count%count_per_page
+
+	for page in range(1, pagination_item_count+1):
+		pagination_items.append(page)
+
+
+	categories = Category.objects.all()
+	tags = Tag.objects.all()
+
+	context = {
+		'post_list': posts,
+		'category_list': categories,
+		'tag_list': tags,
+		'pagination_items': pagination_items,
+		'type': type,
+		'sub_type': sub_type
+	}
+
+	return render(request, 'posts/posts.html', context)
+
 
 def post(request, post_id):
 
