@@ -1,8 +1,12 @@
 from django.shortcuts import render
 from .models import Post, Tag, Category
 
-def posts(request):
-	posts = Post.objects.all()
+def posts(request, page):
+	count_per_page = 5
+	offset = count_per_page * page
+	limit = offset+count_per_page
+
+	posts = Post.objects.all()[offset: limit]
 	categories = Category.objects.all()
 	tags = Tag.objects.all()
 	context = {
