@@ -2,6 +2,38 @@
 
 {% block content %}
 
-	<h2>posts.html</h2>
+	<div>
+		{% for post in post_list %}
+			<div class="">
+				<a class="" href="">{{post.title}}</a>
+			</div>
+		{% endfor %}
+	</div>
+
+{% endblock %}
+
+
+{% block sidebar %}
+
+	<h5>Categories</h5>
+
+	<ul class="nav flex-column">
+		{% for category in category_list %}
+			<li class="nav-item">
+				<a class="nav-link" href="">{{category.name}}</a>
+			</li>
+		{% endfor %}
+	</ul>
+
+
+	<h5 class="mt-5">Tags</h5>
+
+	<ul class="nav flex-column">
+		{% for tag in tag_list %}
+			<li class="nav-item">
+				<a class="nav-link" href="">{{tag.name}}</a>
+			</li>
+		{% endfor %}
+	</ul>
 
 {% endblock %}

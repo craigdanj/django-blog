@@ -1,9 +1,17 @@
 from django.shortcuts import render
-
-# Create your views here.
+from .models import Post, Tag, Category
 
 def posts(request):
-	context = {}
+	posts = Post.objects.all()
+	categories = Category.objects.all()
+	tags = Tag.objects.all()
+	print(tags)
+	context = {
+		'post_list': posts,
+		'category_list': categories,
+		'tag_list': tags,
+	}
+
 	return render(request, 'posts/posts.html', context)
 
 def post(request, post_id):
@@ -11,3 +19,4 @@ def post(request, post_id):
 		'id': post_id,
 	}
 	return render(request, 'posts/post.html', context)
+
