@@ -1,7 +1,39 @@
 {% extends "posts/base.html" %}
 
 {% block content %}
-		<h2>post.html</h2>
-		<p>id - {{id}}</p>
+		
+	<a href="/posts">Back to posts</a>
+
+	<h1 class="mt-4 mb-4">{{post.title}}</h1>
+
+	<div>
+		{{post.description}}
+	</div>
+
+{% endblock %}
+
+
+{% block sidebar %}
+
+	<h5>Categories</h5>
+
+	<ul class="nav flex-column">
+		{% for category in category_list %}
+			<li class="nav-item">
+				<a class="nav-link" href="">{{category.name}}</a>
+			</li>
+		{% endfor %}
+	</ul>
+
+
+	<h5 class="mt-5">Tags</h5>
+
+	<ul class="nav flex-column">
+		{% for tag in tag_list %}
+			<li class="nav-item">
+				<a class="nav-link" href="">{{tag.name}}</a>
+			</li>
+		{% endfor %}
+	</ul>
 
 {% endblock %}
