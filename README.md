@@ -18,3 +18,4 @@ A simple minimalistic blog built with [Django](https://www.djangoproject.com/).
 - [ ] Add error handling. Throw 404 if user requests page that does not exist.
 - [ ] Add next post previous post on post page?
 - [ ] Make responsive
+- [ ] Add selected style to pagination link 
