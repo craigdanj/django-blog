@@ -116,8 +116,6 @@ def taxonomy_posts(request, type, tax_id, page):
 		'sub_type_id': tax_id,
 	}
 
-	print(tax_id)
-
 	return render(request, 'posts/posts.html', context)
 
 # fetch single post
