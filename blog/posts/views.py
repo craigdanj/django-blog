@@ -10,7 +10,11 @@ def posts(request, page):
 	post_count = Post.objects.count()
 
 	pagination_items = []
-	pagination_item_count = post_count%count_per_page
+
+	if post_count <= count_per_page:
+		pagination_item_count = 1
+	else:
+		pagination_item_count = post_count%count_per_page
 
 	for page in range(1, pagination_item_count+1):
 		pagination_items.append(page)
@@ -49,7 +53,7 @@ def taxonomy_posts(request, type, tax_id, page):
 
 	post_count = len(posts)
 	
-	if post_count < count_per_page:
+	if post_count <= count_per_page:
 		pagination_item_count = 1
 	else:
 		pagination_item_count = post_count%count_per_page
