@@ -5,7 +5,6 @@ def posts(request):
 	posts = Post.objects.all()
 	categories = Category.objects.all()
 	tags = Tag.objects.all()
-	print(tags)
 	context = {
 		'post_list': posts,
 		'category_list': categories,
