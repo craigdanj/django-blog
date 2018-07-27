@@ -11,3 +11,4 @@ A simple minimalistic blog built with [Django](https://www.djangoproject.com/).
 - [ ] Set date published to current datetime. Default value.
 - [ ] Add “post list for category” view
 - [ ] Add “post list for tag” view
+- [ ] Add a website name field
