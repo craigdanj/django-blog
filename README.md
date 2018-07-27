@@ -1,7 +1,7 @@
 # django-blog
 A simple minimalistic blog built with Django.
 
-
+#To Do:
 - [ ] Conditionally render the read more link
 - [ ] Add pagination to post list page
 - [ ] Add posts list to home “/” route.
