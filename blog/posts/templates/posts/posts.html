@@ -4,8 +4,16 @@
 
 	<div>
 		{% for post in post_list %}
-			<div class="">
-				<a class="" href="">{{post.title}}</a>
+			<div class="post-excerpt border-bottom pb-4 pt-4">
+				<h2>
+					<a class="post-title" href="">{{post.title}}</a>
+				</h2>
+
+				<div class="post-description">
+					{{post.description|truncatechars:200}}
+				</div>
+
+				<a href="">Read more...</a>
 			</div>
 		{% endfor %}
 	</div>
