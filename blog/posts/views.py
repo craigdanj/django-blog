@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Post, Tag, Category
+import math
 
 def posts(request, page):
 	count_per_page = 5
@@ -14,7 +15,7 @@ def posts(request, page):
 	if post_count <= count_per_page:
 		pagination_item_count = 1
 	else:
-		pagination_item_count = post_count%count_per_page
+		pagination_item_count = math.ceil(post_count/count_per_page)
 
 	for page in range(1, pagination_item_count+1):
 		pagination_items.append(page)
@@ -42,21 +43,27 @@ def taxonomy_posts(request, type, tax_id, page):
 		current_tag = Tag.objects.get(pk=tax_id)
 		sub_type = current_tag.name
 		posts = Post.objects.filter(tag=current_tag)[offset: limit]
+		post_count = Post.objects.filter(tag=current_tag).count()
 
 	elif type == 'category':
 		pass
 		current_cat = Category.objects.get(pk=tax_id)
 		sub_type = current_cat.name
 		posts = Post.objects.filter(category=current_cat)[offset: limit]
+		post_count = Post.objects.filter(category=current_cat).count()
+
 	else:
 		return
 
-	post_count = len(posts)
 	
 	if post_count <= count_per_page:
 		pagination_item_count = 1
 	else:
-		pagination_item_count = post_count%count_per_page
+		pagination_item_count = math.ceil(post_count/count_per_page)
+
+	print(post_count)
+	print(count_per_page)
+	print(pagination_item_count)
 
 	pagination_items = []
 
