@@ -28,28 +28,31 @@ def posts(request, page):
 
 	return render(request, 'posts/posts.html', context)
 
+
 def taxonomy_posts(request, type, tax_id, page):
+	count_per_page = 5
+	offset = count_per_page * (page - 1)
+	limit = offset+count_per_page
 
 	if type == 'tag':
 		pass
 		current_tag = Tag.objects.get(pk=tax_id)
 		sub_type = current_tag.name
-		print(current_tag)
+		posts = Post.objects.filter(tag=current_tag)[offset: limit]
+
 	elif type == 'category':
 		pass
 		current_cat = Category.objects.get(pk=tax_id)
 		sub_type = current_cat.name
+		posts = Post.objects.filter(category=current_cat)[offset: limit]
 
 	else:
 		return
 
-	count_per_page = 5
-	offset = count_per_page * (page - 1)
-	limit = offset+count_per_page
-
-	posts = Post.objects.filter()[offset: limit]
-	post_count = Post.objects.count()
 	
+
+	post_count = Post.objects.count()
+
 	pagination_items = []
 	pagination_item_count = post_count%count_per_page
 
