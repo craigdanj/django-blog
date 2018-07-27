@@ -2,9 +2,14 @@
 
 {% block content %}
 
-	<a href="/posts/1/">Back to posts</a>
+	<a class="badge badge-primary" href="/posts/1/">Back</a>
 
-	<h1 class="mt-4 mb-4">{{post.title}}</h1>
+
+	<p class="text-black-50 mt-4">
+		{{post.pub_date|date:"N j o"}}
+	</p>
+
+	<h1 class=" mb-4">{{post.title}}</h1>
 
 	<div>
 		{{post.description}}

@@ -5,13 +5,15 @@
 	<div>
 		{% for post in post_list %}
 			<div class="post-excerpt border-bottom pb-4 pt-4">
+				<p class="text-black-50">
+					{{post.pub_date|date:"N j o"}}
+				</p>
+				
 				<h2 class="h3">
 					<a class="post-title text-dark" href="/post/{{post.id}}">{{post.title}}</a>
 				</h2>
 
-				<p class="text-black-50">
-					{{post.pub_date|date:"N j o"}}
-				</p>
+				
 
 				<div class="post-description text-muted">
 					{{post.description|truncatechars:200}}
