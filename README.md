@@ -4,15 +4,15 @@ A simple minimalistic blog built with [Django](https://www.djangoproject.com/).
 ### To Do:
 
 - [ ] Add 'no posts found' message when no posts exist in a listing
-- [ ] Add Published date to post list and post details page
+- [x] Add Published date to post list and post details page
 - [x] Conditionally render the read more link
 - [x] Add pagination to post list page
 - [ ] Add posts list to home “/” route.
 - [x] Add single post view
 - [ ] Create function to fetch categories and tags. DRY code.
 - [ ] Set date published to current datetime. Default value.
-- [ ] Add “post list for category” view
-- [ ] Add “post list for tag” view
+- [x] Add “post list for category” view
+- [x] Add “post list for tag” view
 - [ ] Add a website name field
 - [ ] Add rich-text editor for post description.
 - [ ] Document versions of python, django and dependent libraries in readme.
