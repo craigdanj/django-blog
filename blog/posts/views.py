@@ -27,7 +27,8 @@ def posts(request, page):
 		'post_list': posts,
 		'category_list': categories,
 		'tag_list': tags,
-		'pagination_items': pagination_items
+		'pagination_items': pagination_items,
+		'type': None
 	}
 
 	return render(request, 'posts/posts.html', context)
@@ -61,10 +62,6 @@ def taxonomy_posts(request, type, tax_id, page):
 	else:
 		pagination_item_count = math.ceil(post_count/count_per_page)
 
-	print(post_count)
-	print(count_per_page)
-	print(pagination_item_count)
-
 	pagination_items = []
 
 	for page in range(1, pagination_item_count+1):
@@ -80,8 +77,11 @@ def taxonomy_posts(request, type, tax_id, page):
 		'tag_list': tags,
 		'pagination_items': pagination_items,
 		'type': type,
-		'sub_type': sub_type
+		'sub_type': sub_type,
+		'sub_type_id': tax_id,
 	}
+
+	print(tax_id)
 
 	return render(request, 'posts/posts.html', context)
 
