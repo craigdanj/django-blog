@@ -6,10 +6,10 @@
 		{% for post in post_list %}
 			<div class="post-excerpt border-bottom pb-4 pt-4">
 				<h2>
-					<a class="post-title" href="">{{post.title}}</a>
+					<a class="post-title text-dark" href="">{{post.title}}</a>
 				</h2>
 
-				<div class="post-description">
+				<div class="post-description text-muted">
 					{{post.description|truncatechars:200}}
 				</div>
 
