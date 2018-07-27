@@ -13,9 +13,24 @@
 					{{post.description|truncatechars:200}}
 				</div>
 
-				<a href="/post/{{post.id}}">Read more...</a>
+				{% if post.description|length > 100 %}
+					<a href="/post/{{post.id}}">Read more...</a>
+				{% endif %}
+
 			</div>
 		{% endfor %}
+
+		<div class="pagination">
+			<ul class="nav">
+				{% for page in pagination_items %}
+					<li class="nav-item">
+						<a class="nav-link" href="/posts/{{page|add:-1}}">{{page}}</a>
+					</li>
+				{% endfor %}
+			</ul>
+			
+
+		</div>
 	</div>
 
 {% endblock %}
