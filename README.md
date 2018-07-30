@@ -20,6 +20,6 @@ A minimalistic blog built with [Django](https://www.djangoproject.com/).
 - [ ] Document versions of python, django and dependent libraries in readme.
 - [ ] Add error handling. Throw 404 if user requests page that does not exist.
 - [ ] Add next post previous post on post page?
-- [ ] Make responsive
+- [x] Make responsive
 - [ ] Add selected style to pagination link
 - [ ] Try adding url names
