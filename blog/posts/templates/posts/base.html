@@ -42,7 +42,26 @@
 					<div class="col mt-5">
 						{% block sidebar %}
 
-							<h5>Sidebar</h5>
+							<h5>Categories</h5>
+
+							<ul class="nav flex-column">
+								{% for category in category_list %}
+									<li class="nav-item">
+										<a class="nav-link" href="/category/{{category.pk}}/1">{{category.name}}</a>
+									</li>
+								{% endfor %}
+							</ul>
+
+
+							<h5 class="mt-5">Tags</h5>
+
+							<ul class="nav flex-column">
+								{% for tag in tag_list %}
+									<li class="nav-item">
+										<a class="nav-link" href="/tag/{{tag.pk}}/1">{{tag.name}}</a>
+									</li>
+								{% endfor %}
+							</ul>
 
 						{% endblock %}
 					</div>

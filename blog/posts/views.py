@@ -90,7 +90,7 @@ def taxonomy_posts(request, type, tax_id, page):
 	else:
 		return
 
-	
+
 	if post_count <= count_per_page:
 		pagination_item_count = 1
 	else:
