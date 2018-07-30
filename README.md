@@ -1,5 +1,5 @@
 # The Django blog
-A minimalistic blog built with [Django](https://www.djangoproject.com/).
+A minimalistic, standalone blog built with [Django](https://www.djangoproject.com/).
 
 ### To Do:
 
