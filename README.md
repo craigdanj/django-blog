@@ -15,6 +15,7 @@ A minimalistic, standalone blog built with [Django](https://www.djangoproject.co
 - [x] Add “post list for tag” view
 - [x] Customise Django admin to allow filtering posts by taxonomies.
 - [x] Admin improvements. Show post count against taxonomy listing pages.
+- [ ] Add different types of users with different permissions.
 - [ ] Add a website name field. use in website header, footer, admin header.
 - [ ] Add rich-text editor for post description.
 - [ ] Document versions of python, django and dependent libraries in readme.
