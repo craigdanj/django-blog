@@ -2,10 +2,11 @@ from django.shortcuts import render
 from .models import Post, Tag, Category
 import math
 
+count_per_page = 5
+
 # fetch home posts list
 def home(request):
 	page = 1
-	count_per_page = 5
 	offset = count_per_page * (page - 1)
 	limit = offset+count_per_page
 
@@ -38,7 +39,6 @@ def home(request):
 # fetch all posts list
 def posts(request, page):
 
-	count_per_page = 5
 	offset = count_per_page * (page - 1)
 	limit = offset+count_per_page
 
@@ -70,7 +70,6 @@ def posts(request, page):
 
 # fetch post list for given taxonomy item
 def taxonomy_posts(request, type, tax_id, page):
-	count_per_page = 5
 	offset = count_per_page * (page - 1)
 	limit = offset+count_per_page
 
