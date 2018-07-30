@@ -6,6 +6,7 @@ from .models import Category, Post, Tag
 class PostAdmin(admin.ModelAdmin):
 	list_display = ('title', 'category', 'pub_date')
 	list_filter = ['category', 'tag']
+	search_fields = ['title']
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(Category)
