@@ -3,7 +3,7 @@ A simple minimalistic blog built with [Django](https://www.djangoproject.com/).
 
 ### To Do:
 
-- [ ] Add 'no posts found' message when no posts exist in a listing
+- [ ] Add 'no posts found' message when post count = 0
 - [x] Add Published date to post list and post details page
 - [x] Conditionally render the read more link
 - [x] Add pagination to post list page
