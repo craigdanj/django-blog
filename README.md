@@ -13,6 +13,8 @@ A minimalistic blog built with [Django](https://www.djangoproject.com/).
 - [ ] Set date published to current datetime. Default value.
 - [x] Add “post list for category” view
 - [x] Add “post list for tag” view
+- [x] Customise Django admin to allow filtering posts by taxonomies.
+- [x] Admin improvements. Show post count against taxonomy listing pages.
 - [ ] Add a website name field
 - [ ] Add rich-text editor for post description.
 - [ ] Document versions of python, django and dependent libraries in readme.

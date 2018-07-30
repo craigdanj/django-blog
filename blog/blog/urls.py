@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import include, path
 from posts import views
 
+admin.site.site_header = 'Django Blog'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='posts'),
