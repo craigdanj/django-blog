@@ -7,7 +7,7 @@ A minimalistic blog built with [Django](https://www.djangoproject.com/).
 - [x] Add Published date to post list and post details page
 - [x] Conditionally render the read more link
 - [x] Add pagination to post list page
-- [ ] Add posts list to home “/” route.
+- [x] Add posts list to home “/” route.
 - [x] Add single post view
 - [ ] Create function to fetch categories and tags. DRY code.
 - [ ] Set date published to current datetime. Default value.
