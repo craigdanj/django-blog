@@ -4,7 +4,7 @@ A minimalistic, standalone blog built with [Django](https://www.djangoproject.co
 
 ### Installation:
 1. Do a "pip install requirements.txt" from the projects root directory. You could optionally create a virtual environment before doing this.
-2. Run the "python manage.py migrate" command to run database migrations.
+2. Run the "python manage.py migrate" command to run database migrations. Currently it uses SQLite off the shelf. If you want to use another database you will have to make the appropriate changes to the settings.py file.
 3. Deploy following the [deploying django](https://docs.djangoproject.com/en/2.0/howto/deployment/) guide.
 
 
