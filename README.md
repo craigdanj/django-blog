@@ -1,6 +1,14 @@
 # The Django blog
 A minimalistic, standalone blog built with [Django](https://www.djangoproject.com/).
 
+
+### Installation:
+1. Do a "pip install requirements.txt" from the projects root directory. You could optionally create a virtual environment before doing this.
+2. Set DEBUG to False in blog/blog/settings.py. this has to be done amnually for now.
+3. Serve it up with a webserver like NGINX.
+
+
+
 ### To Do:
 
 - [x] Add 'no posts found' message when post count = 0
