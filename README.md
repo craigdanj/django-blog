@@ -1,4 +1,4 @@
-# Mellow
+# mellow
 A minimalistic, standalone blog built with [Django](https://www.djangoproject.com/).
 
 
