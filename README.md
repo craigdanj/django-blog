@@ -8,7 +8,7 @@ A minimalistic, standalone blog built with [Django](https://www.djangoproject.co
 3. Deploy following the [deploying django](https://docs.djangoproject.com/en/2.0/howto/deployment/) guide.
 
 
-### Admin panel:
+### The admin panel:
 1. To log into the admin panel you will have to first create a superuser using the "python manage.py createsuperuser" command.
 2. After you've done that you can navigate to "your-web-domain-here.com/admin" and log in with those credentials.
 
