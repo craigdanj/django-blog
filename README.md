@@ -9,7 +9,7 @@ A minimalistic, standalone blog built with [Django](https://www.djangoproject.co
 
 
 ### Admin panel:
-1. In order to log into the admin panel you will have to first create a superuser using the "python manage.py createsuperuser" command.
+1. To log into the admin panel you will have to first create a superuser using the "python manage.py createsuperuser" command.
 2. After you've done this you can navigate to "your-web-domain-here.com/admin" and log in with those credentials.
 
 
