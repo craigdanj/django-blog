@@ -9,22 +9,12 @@ A minimalistic, standalone blog built with [Django](https://www.djangoproject.co
 
 
 ### The admin panel:
-1. To log into the admin panel first create a superuser using the "python manage.py createsuperuser" command.
+1. To log into the admin panel, first create a superuser using the "python manage.py createsuperuser" command.
 2. After you've done this navigate to "your-web-domain-here.com/admin" and log in with those credentials.
 
 
 ### To Do:
 
-- [x] Add 'no posts found' message when post count = 0
-- [x] Add Published date to post list and post details page
-- [x] Conditionally render the read more link
-- [x] Add pagination to post list page
-- [x] Add posts list to home “/” route.
-- [x] Add single post view
-- [x] Add “post list for category” view
-- [x] Add “post list for tag” view
-- [x] Customise Django admin to allow filtering posts by taxonomies.
-- [x] Admin improvements. Show post count against taxonomy listing pages.
 - [ ] Set date published to current datetime. Default value.
 - [ ] Create function to fetch categories and tags. DRY code.
 - [ ] Add different types of users with different permissions.
