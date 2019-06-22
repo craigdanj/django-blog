@@ -13,7 +13,7 @@ A minimalistic, standalone blog built with [Django](https://www.djangoproject.co
 2. After you've done this navigate to "your-web-domain-here.com/admin" and log in with those credentials.
 
 
-### To Do:
+#### To Do:
 
 - [ ] Set date published to current datetime. Default value.
 - [ ] Create function to fetch categories and tags. DRY code.
